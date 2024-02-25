@@ -1,4 +1,5 @@
-FROM debian:stretch
+# Use a newer version of Debian
+FROM debian:buster
 
 RUN apt-get update && \
     apt-get -y install git \
@@ -14,5 +15,3 @@ WORKDIR /app
 ADD . /app
 
 RUN pip install -r /app/requirements-dev.txt
-
-
